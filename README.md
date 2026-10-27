@@ -1,35 +1,25 @@
-# cotiza-eve
+# Cotiza Bot
 
-This is an [eve](https://eve.dev) agent bootstrapped with [`eve init`](https://eve.dev/docs/reference/cli#eve-init).
+Primer agente comercial para ayudar a convertir presupuestos en ventas.
 
-## Getting started
+## Qué incluye
 
-First, run the development server:
+- Agente EVE con instrucciones comerciales.
+- Herramienta `draft_followup` para sugerir timing, enfoque y mensaje.
+- `create_quote` guarda presupuestos confirmados en la API compartida de Cotiza.
+- `draft_followup` prepara mensajes: todavía no envía WhatsApp ni modifica estados externos.
 
-```bash
-eve dev
-```
+## Ejecutar
 
-The development TUI opens an interactive session where you can send messages to your agent.
-
-Start by editing `agent/instructions.md` to define the agent's identity, purpose, tone, and response guidelines. Configure its model and runtime behavior in `agent/agent.ts`.
-
-Add capabilities under `agent/`, including tools, connections, channels, skills, subagents, and schedules. eve reloads your changes as you work.
-
-## Learn more
-
-To learn more about eve, explore these resources:
-
-- [eve documentation](https://eve.dev/docs) — learn about eve's features and authoring APIs.
-- [Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) — build and deploy an agent step by step.
-- [eve on GitHub](https://github.com/vercel/eve) — view the source and contribute.
-
-## Deploy on Vercel
-
-Deploy your agent to [Vercel](https://vercel.com) from the project root:
+Requiere Node.js 24 y una credencial de modelo configurada en EVE.
 
 ```bash
-eve deploy
+npm run typecheck
+npm run dev
 ```
 
-`eve deploy` links a Vercel project if needed and deploys the agent to production. See the [eve deployment documentation](https://eve.dev/docs/guides/deployment/vercel) for authentication, environment variables, and deployment options.
+En la interfaz de EVE, probá:
+
+> Prepará un seguimiento para Constructora Delta. El presupuesto es de 1850000 por una estructura metálica para galpón. El diferencial es el tratamiento anticorrosivo y la entrega en 30 días.
+
+La integración con la pantalla de `presupuestos-demo`, base de datos y WhatsApp queda para el siguiente paso.
